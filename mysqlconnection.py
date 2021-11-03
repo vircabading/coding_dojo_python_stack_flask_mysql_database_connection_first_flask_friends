@@ -1,4 +1,5 @@
 import pymysql.cursors
+from friend import Friend
 
 class MySQLConnection:
     def __init__(self, db):
