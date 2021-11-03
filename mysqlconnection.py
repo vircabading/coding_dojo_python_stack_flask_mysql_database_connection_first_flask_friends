@@ -17,11 +17,11 @@ class MySQLConnection:
                 query = cursor.mogrify(query, data)
                 print("Running Query:", query)
                 cursor.execute(query)
-                if query.lower().strip().startswith("select"):
                     # SELECT queries will return the data from the database as a LIST OF DICTIONARIES
+                if query.lower().strip().startswith("select"):
                     return cursor.fetchall()
-                elif query.lower().strip().startswith("insert"):
                     # INSERT queries will return the ID NUMBER of the row inserted
+                elif query.lower().strip().startswith("insert"):
                     return cursor.lastrowid
                 # UPDATE and DELETE queries will return nothing
             except Exception as e:
